@@ -1,0 +1,10 @@
+/* IndicBridge deck theme: light (default; projector in a lit room). Tokens only. */
+:root{
+  --bg:#f4f4f2; --bg-soft:#ebebe8; --surface:#ffffff; --surface-2:#f0f0ed;
+  --border:#e2e2de; --border-strong:#c9c9c3; --dot:#cfcfd5;
+  --text-1:#111113; --text-2:#4a4a52; --text-3:#6b6b73;
+  --accent:#4f2cf5; --accent-ink:#ffffff; --accent-soft:#ecebfe;
+  --hi:#985a0e; --en:#2a69ac; --bad:#cf2a1d; --bad-soft:#fdecea;
+  --shadow:0 18px 40px -26px rgba(17,17,19,.28),0 1px 2px rgba(17,17,19,.05);
+  --shadow-lg:0 28px 60px -30px rgba(17,17,19,.35);
+}

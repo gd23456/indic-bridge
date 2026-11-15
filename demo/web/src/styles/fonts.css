@@ -1,0 +1,27 @@
+/*
+ * Monaspace (GitHub Next), self-hosted from the official v1.400 variable webfont release
+ * (github.com/githubnext/monaspace, SIL OFL 1.1), so the page renders with the network off.
+ * Xenon (slab) is the display voice, Neon everything else, Radon (handwriting) one phrase per
+ * headline and the rare margin note. Indic scripts fall through to the bundled Noto faces.
+ */
+@font-face {
+  font-family: "Monaspace Neon";
+  src: url("../assets/fonts/monaspace-neon-var.woff2") format("woff2");
+  font-weight: 200 800;
+  font-stretch: 100% 125%;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Monaspace Xenon";
+  src: url("../assets/fonts/monaspace-xenon-var.woff2") format("woff2");
+  font-weight: 200 800;
+  font-stretch: 100% 125%;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Monaspace Radon";
+  src: url("../assets/fonts/monaspace-radon-var.woff2") format("woff2");
+  font-weight: 200 800;
+  font-stretch: 100% 125%;
+  font-display: swap;
+}

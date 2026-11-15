@@ -1,0 +1,503 @@
+{
+"labels": {
+"tab:rq": [
+"Table",
+"1.1"
+],
+"tab:yearwise": [
+"Table",
+"2.1"
+],
+"tab:tools": [
+"Table",
+"2.2"
+],
+"fig:pipeline": [
+"Fig.",
+"3.1"
+],
+"tab:targets": [
+"Table",
+"3.1"
+],
+"fig:lora": [
+"Fig.",
+"3.2"
+],
+"tab:caps": [
+"Table",
+"3.2"
+],
+"tab:metrics": [
+"Table",
+"3.3"
+],
+"fig:arch": [
+"Fig.",
+"3.3"
+],
+"fig:dataprep": [
+"Fig.",
+"4.1"
+],
+"tab:train": [
+"Table",
+"4.1"
+],
+"tab:drops": [
+"Table",
+"4.2"
+],
+"fig:drops": [
+"Fig.",
+"4.2"
+],
+"tab:test": [
+"Table",
+"4.3"
+],
+"tab:modules": [
+"Table",
+"4.4"
+],
+"tab:bench": [
+"Table",
+"4.5"
+],
+"fig:bench": [
+"Fig.",
+"4.3"
+],
+"tab:fixes": [
+"Table",
+"4.6"
+],
+"tab:trainlog": [
+"Table",
+"4.7"
+],
+"fig:losspiv": [
+"Fig.",
+"4.4"
+],
+"fig:losstgt": [
+"Fig.",
+"4.5"
+],
+"tab:setup": [
+"Table",
+"5.1"
+],
+"tab:runs": [
+"Table",
+"5.2"
+],
+"fig:script": [
+"Fig.",
+"5.1"
+],
+"tab:main": [
+"Table",
+"5.3"
+],
+"fig:wer": [
+"Fig.",
+"5.2"
+],
+"tab:gains": [
+"Table",
+"5.4"
+],
+"fig:gains": [
+"Fig.",
+"5.3"
+],
+"tab:cergains": [
+"Table",
+"5.5"
+],
+"fig:delta": [
+"Fig.",
+"5.4"
+],
+"tab:inter": [
+"Table",
+"5.6"
+],
+"tab:pivotonly": [
+"Table",
+"5.7"
+],
+"fig:pivotonly": [
+"Fig.",
+"5.5"
+],
+"tab:pivots": [
+"Table",
+"5.8"
+],
+"tab:fert": [
+"Table",
+"5.9"
+],
+"fig:fert": [
+"Fig.",
+"5.6"
+],
+"fig:bytes": [
+"Fig.",
+"5.7"
+],
+"tab:odia": [
+"Table",
+"5.10"
+],
+"fig:odiatok": [
+"Fig.",
+"5.8"
+],
+"tab:norm": [
+"Table",
+"5.11"
+],
+"fig:norm": [
+"Fig.",
+"5.9"
+],
+"tab:deploy": [
+"Table",
+"5.12"
+],
+"fig:deploy": [
+"Fig.",
+"5.10"
+],
+"tab:compare": [
+"Table",
+"5.13"
+],
+"tab:answers": [
+"Table",
+"6.1"
+],
+"tab:objectives": [
+"Table",
+"6.2"
+],
+"tab:skills": [
+"Table",
+"7.1"
+],
+"tab:future": [
+"Table",
+"8.1"
+],
+"tab:commands": [
+"Table",
+"A.1"
+],
+"tab:normex": [
+"Table",
+"A.2"
+],
+"fig:demo": [
+"Fig.",
+"A.1"
+],
+"fig:bench2": [
+"Fig.",
+"A.2"
+],
+"tab:samples": [
+"Table",
+"A.3"
+],
+"fig:gantt": [
+"Fig.",
+"A.3"
+],
+"tab:contrib": [
+"Table",
+"A.4"
+]
+},
+"figs": [
+[
+"3.1",
+"The IndicBridge experimental pipeline. Only the first stage differs: a related (Hindi) pivot, an unrelated (English) pivot of equal size, or none.",
+"fig:pipeline"
+],
+[
+"3.2",
+"LoRA on one attention projection: the pre-trained weight stays frozen and only the low-rank matrices A and B are trained",
+"fig:lora"
+],
+[
+"3.3",
+"System architecture of the research pipeline and the demonstration",
+"fig:arch"
+],
+[
+"4.1",
+"Data preparation, applied identically to every language",
+"fig:dataprep"
+],
+[
+"4.2",
+"Clips removed by each filter for the Indian languages",
+"fig:drops"
+],
+[
+"4.3",
+"Training throughput of each benchmarked setting; the setting used is highlighted",
+"fig:bench"
+],
+[
+"4.4",
+"Training loss of the two pivots",
+"fig:losspiv"
+],
+[
+"4.5",
+"Training loss of the target stage for each target and method",
+"fig:losstgt"
+],
+[
+"5.1",
+"Share of output letters in the right script, before and after training (FLEURS)",
+"fig:script"
+],
+[
+"5.2",
+"WER of the three trained methods for each target (zero-shot omitted: above 100%)",
+"fig:wer"
+],
+[
+"5.3",
+"Transfer gain over direct fine-tuning (WER points). Dot: measured gain; line: 95% interval.",
+"fig:gains"
+],
+[
+"5.4",
+"The Hindi-specific gain Δ for each target, with 95% intervals",
+"fig:delta"
+],
+[
+"5.5",
+"CER of the pivot models on each target before target training",
+"fig:pivotonly"
+],
+[
+"5.6",
+"Whisper tokens per letter for each language (FLEURS references)",
+"fig:fert"
+],
+[
+"5.7",
+"Whisper's tokens for one Odia test sentence: almost every token is a single byte",
+"fig:bytes"
+],
+[
+"5.8",
+"Odia WER after training under each borrowed token",
+"fig:odiatok"
+],
+[
+"5.9",
+"WER of the Hindi-pivot models under the three scoring rules",
+"fig:norm"
+],
+[
+"5.10",
+"Accuracy of the fp16 and 4-bit MLX models against PyTorch on the same clips",
+"fig:deploy"
+],
+[
+"A.1",
+"The demonstration application: a test clip transcribed by every model",
+"fig:demo"
+],
+[
+"A.2",
+"The bench: any test clip, every model, errors marked",
+"fig:bench2"
+],
+[
+"A.3",
+"Project schedule (Gantt chart)",
+"fig:gantt"
+]
+],
+"tabs": [
+[
+"1.1",
+"Research questions mapped to experiments and measures",
+"tab:rq"
+],
+[
+"2.1",
+"Year-wise summary of previous methodologies",
+"tab:yearwise"
+],
+[
+"2.2",
+"Tools and techniques used",
+"tab:tools"
+],
+[
+"3.1",
+"The three target languages and what each one tests",
+"tab:targets"
+],
+[
+"3.2",
+"Output-length limit of Equation 3.2 for each language",
+"tab:caps"
+],
+[
+"3.3",
+"Evaluation measures",
+"tab:metrics"
+],
+[
+"4.1",
+"Training data",
+"tab:train"
+],
+[
+"4.2",
+"Clips removed by each filter while sampling",
+"tab:drops"
+],
+[
+"4.3",
+"Test data and references excluded by the decoder limit",
+"tab:test"
+],
+[
+"4.4",
+"Code modules",
+"tab:modules"
+],
+[
+"4.5",
+"Measured training throughput and memory on the Apple M4",
+"tab:bench"
+],
+[
+"4.6",
+"Problems met during implementation and how they were solved",
+"tab:fixes"
+],
+[
+"4.7",
+"Training runs, from their logs",
+"tab:trainlog"
+],
+[
+"5.1",
+"Experimental setup, identical for every run",
+"tab:setup"
+],
+[
+"5.2",
+"The 25 runs",
+"tab:runs"
+],
+[
+"5.3",
+"WER and CER (%) of every model after normalization",
+"tab:main"
+],
+[
+"5.4",
+"Transfer gains in WER points with 95% paired-bootstrap intervals",
+"tab:gains"
+],
+[
+"5.5",
+"Transfer gains in CER points with 95% paired-bootstrap intervals",
+"tab:cergains"
+],
+[
+"5.6",
+"Difference in the Hindi-specific gain between targets (WER points, 95% CI)",
+"tab:inter"
+],
+[
+"5.7",
+"Pivot models scored on the targets before any target training (FLEURS)",
+"tab:pivotonly"
+],
+[
+"5.8",
+"How much each pivot stage changed the model",
+"tab:pivots"
+],
+[
+"5.9",
+"Tokenizer cost and the decoder limit (FLEURS references)",
+"tab:fert"
+],
+[
+"5.10",
+"The borrowed language token for Odia",
+"tab:odia"
+],
+[
+"5.11",
+"The Hindi-pivot models under three scoring rules",
+"tab:norm"
+],
+[
+"5.12",
+"On-device deployment with MLX on the Apple M4 (100 FLEURS clips per model)",
+"tab:deploy"
+],
+[
+"5.13",
+"Comparison with existing methods (gain of multistage over direct fine-tuning)",
+"tab:compare"
+],
+[
+"6.1",
+"Research questions and the answers this project gives",
+"tab:answers"
+],
+[
+"6.2",
+"Fulfilment of objectives, with the statistical evidence",
+"tab:objectives"
+],
+[
+"7.1",
+"Skills exercised in the project",
+"tab:skills"
+],
+[
+"8.1",
+"Future work and what each step would test",
+"tab:future"
+],
+[
+"A.1",
+"Commands to reproduce the experiments",
+"tab:commands"
+],
+[
+"A.2",
+"One Hindi phrase under the two normalizers",
+"tab:normex"
+],
+[
+"A.3",
+"Sample transcripts from the test sets",
+"tab:samples"
+],
+[
+"A.4",
+"Team contributions",
+"tab:contrib"
+]
+]
+}

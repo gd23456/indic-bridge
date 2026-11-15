@@ -1,0 +1,13 @@
+test_set,metric,comparison,basis,points,ci_low,ci_high,significant
+fleurs,WER,marathi - kannada,E-H,0.54,-0.95,2.06,False
+fleurs,WER,odia - kannada,E-H,0.61,-0.8,2.24,False
+fleurs,WER,marathi - odia,E-H,-0.07,-1.42,1.32,False
+fleurs,CER,marathi - kannada,E-H,0.24,-0.39,0.86,False
+fleurs,CER,odia - kannada,E-H,0.57,-0.33,1.46,False
+fleurs,CER,marathi - odia,E-H,-0.33,-1.25,0.66,False
+kathbath,WER,marathi - kannada,E-H,2.69,0.95,4.82,True
+kathbath,WER,odia - kannada,E-H,0.65,-1.03,2.44,False
+kathbath,WER,marathi - odia,E-H,2.04,0.13,4.28,True
+kathbath,CER,marathi - kannada,E-H,0.6,-0.2,1.48,False
+kathbath,CER,odia - kannada,E-H,0.24,-0.55,1.05,False
+kathbath,CER,marathi - odia,E-H,0.36,-0.63,1.37,False

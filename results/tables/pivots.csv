@@ -1,0 +1,3 @@
+pivot,first_loss,last_loss,lora_update_norm
+P-hindi,1.308,0.2706,36.15
+P-english,0.4878,0.0772,29.57

@@ -1,0 +1,116 @@
+{
+  "device": "mps",
+  "base_model": "openai/whisper-base",
+  "tier": "B",
+  "pivot_steps": 2000,
+  "target_steps": 1000,
+  "batch_size": 2,
+  "grad_accum": 8,
+  "precision": "fp32",
+  "grad_ckpt": false,
+  "eval_dtype": "fp32",
+  "eval_batch": 4,
+  "decision": "whisper-small trains at 1.35 clips/s on the M4 (full grid ~99 h); whisper-base at 4.54 clips/s. Chosen: whisper-base, tier B (2 pivots x 2000 + 11 targets x 1000 steps, effective batch 16) ~15 h.",
+  "bench": {
+    "train": [
+      {
+        "batch": 2,
+        "precision": "fp32",
+        "grad_ckpt": false,
+        "samples_per_sec": 1.35,
+        "mem_gb": 9.3
+      },
+      {
+        "batch": 4,
+        "precision": "fp32",
+        "grad_ckpt": true,
+        "samples_per_sec": 0.97,
+        "mem_gb": 4.9
+      },
+      {
+        "batch": 8,
+        "precision": "fp32",
+        "grad_ckpt": true,
+        "samples_per_sec": 0.99,
+        "mem_gb": 8.5
+      },
+      {
+        "batch": 8,
+        "precision": "bf16",
+        "grad_ckpt": true,
+        "samples_per_sec": 0.94,
+        "mem_gb": 8.5
+      },
+      {
+        "batch": 16,
+        "precision": "bf16",
+        "grad_ckpt": true,
+        "error": "RuntimeError: MPS backend out of memory (MPS allocated: 4.39 GB, other allocations: 4.79 GB, max allowed: 9.47 GB). Tried to allocate "
+      }
+    ],
+    "decode_clips_per_sec": {
+      "fp32": 2.13,
+      "fp16": "RuntimeError: MPS backend out of memory (MPS allocated: 2.66 GB, other allocations: 6.51 GB, m"
+    },
+    "grid_hours": {
+      "A": 98.8,
+      "B": 49.4,
+      "C": 37.0
+    },
+    "train_whisper_base": [
+      {
+        "batch": 4,
+        "precision": "fp32",
+        "grad_ckpt": false,
+        "samples_per_sec": 4.54,
+        "mem_gb": 6.5
+      },
+      {
+        "batch": 8,
+        "precision": "fp32",
+        "grad_ckpt": false,
+        "error": "MPS OOM at 9.47 GB cap"
+      }
+    ],
+    "whisper_base_attention": [
+      {
+        "precision": "fp32",
+        "attn": "sdpa",
+        "batch": 4,
+        "clips_per_sec": 4.74,
+        "mem_gb": 6.4
+      },
+      {
+        "precision": "fp16",
+        "attn": "sdpa",
+        "batch": 4,
+        "clips_per_sec": 4.31,
+        "mem_gb": 6.6
+      },
+      {
+        "precision": "fp32",
+        "attn": "eager",
+        "batch": 4,
+        "clips_per_sec": 5.64,
+        "mem_gb": 5.9
+      },
+      {
+        "precision": "fp16",
+        "attn": "eager",
+        "batch": 4,
+        "clips_per_sec": 5.23,
+        "mem_gb": 7.1
+      },
+      {
+        "precision": "fp32",
+        "attn": "eager",
+        "batch": 8,
+        "clips_per_sec": 5.43,
+        "mem_gb": 9.2
+      }
+    ]
+  },
+  "attn_implementation": "eager",
+  "eval_batch_note": "16 OOMs with eager attention at the 9.5 GB MPS cap; 4 fits",
+  "batch_note": "Effective batch 16 throughout. P-english ran 4x4; from P-hindi on 2x8, because Hindi/Odia/Kannada labels reach 419-443 tokens and 4-clip batches exceeded the 9.5 GB MPS cap. Same optimisation, smaller micro-batches."
+}

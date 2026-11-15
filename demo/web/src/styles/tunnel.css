@@ -1,0 +1,94 @@
+/*
+ * The hero stage: a dot grid, two depth rings and a faint indigo wash, all centred on the
+ * vanishing point at 46% (where the orb lands), and the tunnel of test sentences flying
+ * out of it (components/Tunnel.tsx writes each card's transform and opacity).
+ */
+.stage-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--dot) 1px, transparent 1px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(ellipse 72% 70% at 50% 46%, #000 52%, transparent 100%);
+  mask-image: radial-gradient(ellipse 72% 70% at 50% 46%, #000 52%, transparent 100%);
+}
+.stage-wash {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 46%, color-mix(in srgb, var(--brand) 10%, transparent) 0%, transparent 52%);
+}
+.stage-ring {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.stage-ring[data-ring='inner'] {
+  width: 48vmin;
+  height: 48vmin;
+  border: 1px solid color-mix(in srgb, var(--brand) 22%, transparent);
+}
+.stage-ring[data-ring='outer'] {
+  width: 78vmin;
+  height: 78vmin;
+  border: 1px dashed var(--line-strong);
+  opacity: 0.7;
+}
+
+.tunnel {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: opacity 700ms var(--ease-out);
+  /* cards fade out before they reach the top bar */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 120px);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 120px);
+}
+/* While the orb holds a result, the sentences step back so the card reads. */
+.tunnel[data-calm] {
+  opacity: 0.28;
+}
+
+.tunnel-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  aspect-ratio: 4 / 5;
+  padding: 16px;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-float);
+  overflow: hidden;
+}
+/* Dark: a lifted surface and the strong line, so every card reads as a card, not floating text. */
+:root[data-theme='dark'] .tunnel-card {
+  background: #18181e;
+  border-color: var(--line-strong);
+}
+.tunnel-card[data-mine],
+:root[data-theme='dark'] .tunnel-card[data-mine] {
+  border: 1.5px solid var(--brand);
+}
+.tunnel-card p {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Behind the headline: the stage's own paper, fading out, so flying cards never cross the words. */
+.hero-veil {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: -1;
+  width: min(1080px, 135%);
+  height: 175%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(closest-side, var(--paper) 58%, color-mix(in srgb, var(--paper) 0%, transparent) 100%);
+  pointer-events: none;
+}

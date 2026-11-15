@@ -1,0 +1,7 @@
+run_id,language,method,pivot,lang_token,base_model,train_hours,train_steps,test_set,WER_raw,WER_clean,CER_raw,CER_clean,WER_whisper_norm,punct_gain,script_valid,n_samples,date,norm_version
+Z-hindi,hindi,zeroshot,none,hindi,openai/whisper-base,0.0,0,fleurs,146.64,155.28,138.18,135.34,124.44,-8.64,7.44,417,2026-11-02,3.0.0
+Z-marathi,marathi,zeroshot,none,marathi,openai/whisper-base,0.0,0,fleurs,140.46,157.82,126.11,124.97,112.36,-17.36,0.27,600,2026-11-02,3.0.0
+Z-kannada,kannada,zeroshot,none,kannada,openai/whisper-base,0.0,0,fleurs,184.22,192.63,141.11,140.17,123.01,-8.41,0.0,600,2026-11-02,3.0.0
+Z-odia-bengali,odia,zeroshot,none,bengali,openai/whisper-base,0.0,0,fleurs,174.75,194.24,167.57,166.38,126.56,-19.49,0.0,600,2026-11-02,3.0.0
+Z-odia-assamese,odia,zeroshot,none,assamese,openai/whisper-base,0.0,0,fleurs,187.17,199.71,167.83,165.88,133.29,-12.54,0.0,600,2026-11-02,3.0.0
+Z-odia-hindi,odia,zeroshot,none,hindi,openai/whisper-base,0.0,0,fleurs,190.66,210.52,162.79,161.51,148.08,-19.86,0.0,600,2026-11-02,3.0.0

@@ -1,0 +1,606 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-04T00:00:00Z",
+  "title": "Design System: IndicBridge",
+  "extensions": {
+    "colorMeta": {
+      "brand-indigo": {
+        "role": "primary",
+        "displayName": "Electric Indigo",
+        "canonical": "#4f2cf5",
+        "purpose": "Identity, primary action, the orb, focus, the Radon headline phrase (light theme).",
+        "tonalRamp": [
+          "#180d4a",
+          "#28167a",
+          "#371fac",
+          "#4627d8",
+          "#4f2cf5",
+          "#9580f9",
+          "#cac0fc",
+          "#edeafe"
+        ]
+      },
+      "brand-indigo-dark": {
+        "role": "primary",
+        "displayName": "Electric Indigo (dark)",
+        "canonical": "#9d8cff",
+        "purpose": "The lighter indigo that replaces brand-indigo in the dark theme.",
+        "tonalRamp": [
+          "#2f2a4c",
+          "#4e4680",
+          "#6e62b2",
+          "#8a7be0",
+          "#9d8cff",
+          "#c4baff",
+          "#e2dcff",
+          "#f5f4ff"
+        ]
+      },
+      "brand-ink": {
+        "role": "primary",
+        "displayName": "Indigo Ink",
+        "canonical": "#ffffff",
+        "purpose": "Icon and text colour on an indigo fill (light theme; #0a0a0c in dark).",
+        "tonalRamp": [
+          "#4c4c4c",
+          "#808080",
+          "#b2b2b2",
+          "#e0e0e0",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff"
+        ]
+      },
+      "brand-tint": {
+        "role": "primary",
+        "displayName": "Indigo Tint",
+        "canonical": "#ecebfe",
+        "purpose": "Selected bench clip row only (#1d1938 in dark).",
+        "tonalRamp": [
+          "#47464c",
+          "#76767f",
+          "#a5a4b2",
+          "#d0cfe0",
+          "#ecebfe",
+          "#f4f3fe",
+          "#f9f9ff",
+          "#fdfdff"
+        ]
+      },
+      "alert-red": {
+        "role": "secondary",
+        "displayName": "Alert Red",
+        "canonical": "#cf2a1d",
+        "purpose": "Wrong words and failures the presenter must see, nothing else.",
+        "tonalRamp": [
+          "#3e0d09",
+          "#68150e",
+          "#911d14",
+          "#b6251a",
+          "#cf2a1d",
+          "#e27f77",
+          "#f1bfbb",
+          "#faeae8"
+        ]
+      },
+      "alert-red-dark": {
+        "role": "secondary",
+        "displayName": "Alert Red (dark)",
+        "canonical": "#ff6257",
+        "purpose": "Alert red in the dark theme.",
+        "tonalRamp": [
+          "#4c1d1a",
+          "#80312c",
+          "#b2453d",
+          "#e0564d",
+          "#ff6257",
+          "#ffa19a",
+          "#ffd0cd",
+          "#ffefee"
+        ]
+      },
+      "alert-bg": {
+        "role": "secondary",
+        "displayName": "Alert Wash",
+        "canonical": "#fdecea",
+        "purpose": "Background behind alert content (#3a0f0b in dark).",
+        "tonalRamp": [
+          "#4c4746",
+          "#7e7675",
+          "#b1a5a4",
+          "#dfd0ce",
+          "#fdecea",
+          "#fef4f2",
+          "#fef9f9",
+          "#fffdfd"
+        ]
+      },
+      "pivot-hindi-gold": {
+        "role": "tertiary",
+        "displayName": "Hindi Gold",
+        "canonical": "#985a0e",
+        "purpose": "Hindi pivot series in data only (#b9861f in dark).",
+        "tonalRamp": [
+          "#2e1b04",
+          "#4c2d07",
+          "#6a3f0a",
+          "#864f0c",
+          "#985a0e",
+          "#c19c6e",
+          "#e0ceb7",
+          "#f5eee7"
+        ]
+      },
+      "pivot-english-blue": {
+        "role": "tertiary",
+        "displayName": "English Blue",
+        "canonical": "#2a69ac",
+        "purpose": "English pivot series in data only (#4a8ee6 in dark).",
+        "tonalRamp": [
+          "#0d2034",
+          "#153456",
+          "#1d4a78",
+          "#255c97",
+          "#2a69ac",
+          "#7fa5cd",
+          "#bfd2e6",
+          "#eaf0f7"
+        ]
+      },
+      "glow-a": {
+        "role": "tertiary",
+        "displayName": "Orb Glow Violet",
+        "canonical": "#8f7dff",
+        "purpose": "Orb aurora and ring only.",
+        "tonalRamp": [
+          "#2b264c",
+          "#483e80",
+          "#6458b2",
+          "#7e6ee0",
+          "#8f7dff",
+          "#bcb1ff",
+          "#ddd8ff",
+          "#f4f2ff"
+        ]
+      },
+      "glow-b": {
+        "role": "tertiary",
+        "displayName": "Orb Glow Lilac",
+        "canonical": "#c3a6ff",
+        "purpose": "Orb aurora only.",
+        "tonalRamp": [
+          "#3a324c",
+          "#625380",
+          "#8874b2",
+          "#ac92e0",
+          "#c3a6ff",
+          "#dbcaff",
+          "#ede4ff",
+          "#f9f6ff"
+        ]
+      },
+      "glow-c": {
+        "role": "tertiary",
+        "displayName": "Orb Glow Sky",
+        "canonical": "#6ec3ff",
+        "purpose": "Orb aurora only.",
+        "tonalRamp": [
+          "#213a4c",
+          "#376280",
+          "#4d88b2",
+          "#61ace0",
+          "#6ec3ff",
+          "#a8dbff",
+          "#d4edff",
+          "#f0f9ff"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#f4f4f2",
+        "purpose": "Page and stage background.",
+        "tonalRamp": [
+          "#494949",
+          "#7a7a79",
+          "#ababa9",
+          "#d7d7d5",
+          "#f4f4f2",
+          "#f8f8f7",
+          "#fcfcfb",
+          "#fefefe"
+        ]
+      },
+      "sunken": {
+        "role": "neutral",
+        "displayName": "Sunken Paper",
+        "canonical": "#ebebe8",
+        "purpose": "Row hover, byte chips (#111115 in dark).",
+        "tonalRamp": [
+          "#464646",
+          "#767674",
+          "#a4a4a2",
+          "#cfcfcc",
+          "#ebebe8",
+          "#f3f3f1",
+          "#f9f9f8",
+          "#fdfdfd"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Card White",
+        "canonical": "#ffffff",
+        "purpose": "Cards, pills, tooltips, menus.",
+        "tonalRamp": [
+          "#4c4c4c",
+          "#808080",
+          "#b2b2b2",
+          "#e0e0e0",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff",
+          "#ffffff"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#e2e2de",
+        "purpose": "Default 1px dividers and card borders (#24242b in dark).",
+        "tonalRamp": [
+          "#444443",
+          "#71716f",
+          "#9e9e9b",
+          "#c7c7c3",
+          "#e2e2de",
+          "#eeeeeb",
+          "#f6f6f5",
+          "#fcfcfc"
+        ]
+      },
+      "line-strong": {
+        "role": "neutral",
+        "displayName": "Graphite Line",
+        "canonical": "#c9c9c3",
+        "purpose": "Control borders, dashed outer ring, chart zero line (#36363f in dark).",
+        "tonalRamp": [
+          "#3c3c3a",
+          "#646462",
+          "#8d8d88",
+          "#b1b1ac",
+          "#c9c9c3",
+          "#dfdfdb",
+          "#efefed",
+          "#fafaf9"
+        ]
+      },
+      "dot": {
+        "role": "neutral",
+        "displayName": "Dot Grey",
+        "canonical": "#cdcdd3",
+        "purpose": "Hero dot grid (#2a2a38 in dark).",
+        "tonalRamp": [
+          "#3e3e3f",
+          "#66666a",
+          "#909094",
+          "#b4b4ba",
+          "#cdcdd3",
+          "#e1e1e5",
+          "#f0f0f2",
+          "#fafafb"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#111113",
+        "purpose": "Text, transcripts, selected segment fill.",
+        "tonalRamp": [
+          "#050506",
+          "#08080a",
+          "#0c0c0d",
+          "#0f0f11",
+          "#111113",
+          "#707071",
+          "#b8b8b8",
+          "#e7e7e7"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "canonical": "#5c5c63",
+        "purpose": "Secondary text, metadata, dropped-word ghosts (#9b9ba6 in dark).",
+        "tonalRamp": [
+          "#1c1c1e",
+          "#2e2e32",
+          "#404045",
+          "#515157",
+          "#5c5c63",
+          "#9d9da1",
+          "#ceced0",
+          "#efefef"
+        ]
+      },
+      "paper-dark": {
+        "role": "neutral",
+        "displayName": "Night Paper",
+        "canonical": "#0a0a0c",
+        "purpose": "Page background in the dark theme.",
+        "tonalRamp": [
+          "#030304",
+          "#050506",
+          "#070708",
+          "#09090b",
+          "#0a0a0c",
+          "#6c6c6d",
+          "#b6b6b6",
+          "#e6e6e7"
+        ]
+      },
+      "surface-dark": {
+        "role": "neutral",
+        "displayName": "Night Card",
+        "canonical": "#141418",
+        "purpose": "Card surface in the dark theme; tunnel cards lift to #18181e.",
+        "tonalRamp": [
+          "#060607",
+          "#0a0a0c",
+          "#0e0e11",
+          "#121215",
+          "#141418",
+          "#727274",
+          "#b8b8ba",
+          "#e8e8e8"
+        ]
+      },
+      "ink-dark": {
+        "role": "neutral",
+        "displayName": "Night Ink",
+        "canonical": "#f1f1f3",
+        "purpose": "Text in the dark theme.",
+        "tonalRamp": [
+          "#484849",
+          "#78787a",
+          "#a9a9aa",
+          "#d4d4d6",
+          "#f1f1f3",
+          "#f7f7f8",
+          "#fbfbfb",
+          "#fefefe"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display (Xenon)",
+        "purpose": "Hero H1 only; 2.6rem / 4.25rem (sm) / 5.75rem (lg); font-stretch 112%; text-wrap balance."
+      },
+      "headline": {
+        "displayName": "Headline (Xenon)",
+        "purpose": "One per section; 2.25rem / 3.5rem (sm)."
+      },
+      "hand": {
+        "displayName": "Hand (Radon)",
+        "purpose": "One phrase per headline, indigo there; otherwise a short muted margin note or caption."
+      },
+      "body": {
+        "displayName": "Body (Neon)",
+        "purpose": "Supporting lines and UI text; 15px root."
+      },
+      "script": {
+        "displayName": "Script (Noto)",
+        "purpose": "Every Indic transcript; overflow-wrap anywhere; 1.0625rem lanes, 1.375rem live transcript, up to 1.875rem showcase."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase table column headers and tunnel-card language names only."
+      },
+      "data": {
+        "displayName": "Data",
+        "purpose": "Tabular figures for every compared number."
+      }
+    },
+    "shadows": [
+      {
+        "name": "float",
+        "value": "0 22px 48px -28px rgba(17,17,19,0.3), 0 1px 2px rgba(17,17,19,0.05)",
+        "darkValue": "0 26px 60px -28px rgba(0,0,0,0.85)",
+        "purpose": "Tunnel cards, mobile menu, chart tooltip."
+      },
+      {
+        "name": "orb-pill",
+        "value": "0 14px 36px -22px rgba(17,17,19,0.18)",
+        "darkValue": "0 1px 0 rgba(255,255,255,0.04) inset, 0 24px 60px -28px rgba(0,0,0,0.55)",
+        "purpose": "The resting orb input pill."
+      },
+      {
+        "name": "orb-card",
+        "value": "0 22px 54px -30px rgba(17,17,19,0.16), 0 1px 2px rgba(17,17,19,0.06)",
+        "darkValue": "0 30px 80px -30px rgba(0,0,0,0.95)",
+        "purpose": "The unfolded result card."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Default easing for presses, tunnel dimming, ignition."
+      },
+      {
+        "name": "press",
+        "value": "transform 140ms; scale(0.97) on active (0.94 for the mic)",
+        "purpose": "Every pressable control."
+      },
+      {
+        "name": "tunnel-flight",
+        "value": "44s per card, far z -1700 to near 480 (mobile -1200 to 320); perspective 1200 (900 mobile)",
+        "purpose": "Hero tunnel drift; scroll adds travel, pointer pans up to 42px (18px mobile)."
+      },
+      {
+        "name": "tunnel-calm",
+        "value": "pace 0.18, opacity 0.28 over 700ms",
+        "purpose": "While the orb holds a result."
+      },
+      {
+        "name": "ignite",
+        "value": "900ms per wrong word, 40ms stagger, 120ms lead; ghosts fade in 600ms",
+        "purpose": "Error marks lighting up once when a lane lands; none under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "chart-notes",
+        "value": "560px (container width)"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Mic Button (primary)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one filled indigo action: the orb's mic, the bench play button.",
+      "html": "<button class=\"ds-btn-primary\" aria-label=\"Record speech\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z\"/><path d=\"M19 10v2a7 7 0 0 1-14 0v-2\"/><line x1=\"12\" x2=\"12\" y1=\"19\" y2=\"22\"/></svg></button>",
+      "css": ".ds-btn-primary{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid var(--brand);background:var(--brand);color:var(--brand-ink);cursor:pointer;transition:transform 140ms cubic-bezier(0.23,1,0.32,1),background-color 150ms ease}.ds-btn-primary:active{transform:scale(0.94)}.ds-btn-primary:focus-visible{outline:2px solid var(--brand);outline-offset:2px}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Every secondary action: test clip, play the clip, run live.",
+      "html": "<button class=\"ds-btn-outline\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M2 10v3M6 6v11M10 3v18M14 8v7M18 5v13M22 10v3\"/></svg>Test clip</button>",
+      "css": ".ds-btn-outline{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;border:1px solid var(--line-strong);background:transparent;color:var(--ink);font-family:'Monaspace Neon',ui-monospace,monospace;font-size:0.8125rem;cursor:pointer;transition:transform 140ms cubic-bezier(0.23,1,0.32,1),border-color 150ms ease}.ds-btn-outline:hover{border-color:var(--brand)}.ds-btn-outline:active{transform:scale(0.97)}.ds-btn-outline:focus-visible{outline:2px solid var(--brand);outline-offset:2px}"
+    },
+    {
+      "name": "Segmented Control",
+      "kind": "chip",
+      "refersTo": "segmented-on",
+      "description": "Test set and metric switches; selected option ink-filled.",
+      "html": "<div class=\"ds-seg\" role=\"radiogroup\"><button class=\"ds-seg-opt\" aria-checked=\"true\">FLEURS</button><button class=\"ds-seg-opt\" aria-checked=\"false\">Kathbath</button></div>",
+      "css": ".ds-seg{display:inline-flex;padding:2px;border-radius:999px;border:1px solid var(--line-strong)}.ds-seg-opt{padding:6px 14px;border:0;border-radius:999px;background:transparent;color:var(--muted);font-family:'Monaspace Neon',ui-monospace,monospace;font-size:0.8125rem;cursor:pointer;transition:transform 140ms cubic-bezier(0.23,1,0.32,1),color 150ms ease}.ds-seg-opt:hover{color:var(--ink)}.ds-seg-opt[aria-checked=\"true\"]{background:var(--ink);color:var(--paper)}.ds-seg-opt:active{transform:scale(0.97)}.ds-seg-opt:focus-visible{outline:2px solid var(--brand);outline-offset:2px}"
+    },
+    {
+      "name": "Filter Input",
+      "kind": "input",
+      "refersTo": "input-filter",
+      "description": "Pill text field on paper, used to filter the bench clips.",
+      "html": "<input class=\"ds-input\" placeholder=\"Filter 412 clips\">",
+      "css": ".ds-input{width:16rem;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font-family:'Monaspace Neon',ui-monospace,monospace;font-size:0.8125rem;caret-color:var(--brand)}.ds-input::placeholder{color:var(--muted)}.ds-input:hover{border-color:var(--line-strong)}.ds-input:focus-visible{outline:2px solid var(--brand);outline-offset:2px}"
+    },
+    {
+      "name": "Top Bar",
+      "kind": "nav",
+      "refersTo": "icon-button",
+      "description": "Arch mark and Xenon wordmark, three lowercase links, live network dot, round theme toggle.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-mark\"><svg viewBox=\"0 0 32 32\" width=\"28\" height=\"28\"><path d=\"M3.5 22.5C7 12.6 25 12.6 28.5 22.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3\" stroke-linecap=\"round\"/><path d=\"M3 22.5h26\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M10 22.5v-4.6M16 22.5V16M22 22.5v-4.6\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\"/></svg><b>IndicBridge</b></span><span class=\"ds-links\"><a href=\"#\">odia</a><a href=\"#\">results</a><a href=\"#\">bench</a><span class=\"ds-net\"><i></i>offline</span><button class=\"ds-icon-btn\" aria-label=\"Theme\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z\"/></svg></button></span></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px 32px;background:var(--paper);font-family:'Monaspace Neon',ui-monospace,monospace}.ds-mark{display:inline-flex;align-items:center;gap:10px;color:var(--brand)}.ds-mark b{font-family:'Monaspace Xenon',ui-monospace,monospace;font-weight:800;font-stretch:112%;letter-spacing:-0.03em;font-size:1.0625rem;color:var(--ink)}.ds-links{display:flex;align-items:center;gap:24px;font-size:0.8125rem;color:var(--muted)}.ds-links a{color:inherit;text-decoration:none;text-underline-offset:4px}.ds-links a:hover{color:var(--ink);text-decoration:underline}.ds-net{display:inline-flex;align-items:center;gap:8px;font-size:0.75rem;color:var(--ink)}.ds-net i{width:8px;height:8px;border-radius:50%;background:var(--brand)}.ds-icon-btn{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);cursor:pointer;transition:transform 140ms cubic-bezier(0.23,1,0.32,1),border-color 150ms ease}.ds-icon-btn:hover{border-color:var(--brand)}.ds-icon-btn:active{transform:scale(0.97)}.ds-icon-btn:focus-visible{outline:2px solid var(--brand);outline-offset:2px}"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Flat white container on paper for the chart, clip list and lanes.",
+      "html": "<div class=\"ds-card\"><p class=\"ds-card-t\">Odia</p><p class=\"ds-card-m\">Indo-Aryan · its own script</p></div>",
+      "css": ".ds-card{max-width:28rem;padding:20px;border-radius:14px;border:1px solid var(--line);background:var(--surface);font-family:'Monaspace Neon',ui-monospace,monospace}.ds-card-t{margin:0;font-size:0.9375rem;font-weight:500;color:var(--ink)}.ds-card-m{margin:4px 0 0;font-size:0.75rem;color:var(--muted)}"
+    },
+    {
+      "name": "Tunnel Card",
+      "kind": "custom",
+      "refersTo": "tunnel-card",
+      "description": "A real FLEURS sentence on a 4:5 card; your own cards get the indigo edge and a Radon note.",
+      "html": "<div class=\"ds-tcard\" data-mine><span class=\"ds-tcard-h\"><span>ODIA</span><span>4.2 s</span></span><p lang=\"or\">ଆଜି ପାଣିପାଗ ବହୁତ ଭଲ ଅଛି ।</p><span class=\"ds-tcard-n\">you, just now</span></div>",
+      "css": ".ds-tcard{display:flex;flex-direction:column;justify-content:space-between;gap:12px;width:200px;aspect-ratio:4/5;padding:16px;border-radius:14px;background:var(--surface);border:1px solid var(--line);box-shadow:0 22px 48px -28px rgba(17,17,19,0.3),0 1px 2px rgba(17,17,19,0.05);font-family:'Monaspace Neon',ui-monospace,monospace;transition:transform 140ms cubic-bezier(0.23,1,0.32,1)}.ds-tcard:hover{transform:translateY(-2px)}.ds-tcard[data-mine]{border:1.5px solid var(--brand)}.ds-tcard-h{display:flex;justify-content:space-between;font-size:0.6875rem;letter-spacing:0.12em;color:var(--muted)}.ds-tcard p{margin:0;font-family:'Noto Sans Oriya Variable','Noto Sans Oriya',sans-serif;font-size:1.0625rem;line-height:1.55;color:var(--ink)}.ds-tcard-n{font-family:'Monaspace Radon',ui-monospace,monospace;font-weight:500;letter-spacing:-0.03em;font-size:0.875rem;color:var(--brand)}"
+    },
+    {
+      "name": "Error Marks",
+      "kind": "custom",
+      "refersTo": "script",
+      "description": "Substituted (solid red), inserted (dashed red) and dropped (struck ghost) words, igniting once.",
+      "html": "<p class=\"ds-marks\">ଆଜି <span class=\"ds-sub\">ପାଣି</span> <span class=\"ds-ins\">ବହୁ</span> <span class=\"ds-del\">ଭଲ</span> ଅଛି</p>",
+      "css": ".ds-marks{font-family:'Noto Sans Oriya Variable','Noto Sans Oriya',sans-serif;font-size:1.0625rem;line-height:1.7;color:var(--ink)}.ds-sub,.ds-ins{color:var(--alert);text-decoration-line:underline;text-decoration-thickness:1.5px;text-underline-offset:4px;text-decoration-color:var(--alert);animation:ds-ignite 900ms cubic-bezier(0.23,1,0.32,1) both 120ms}.ds-ins{text-decoration-style:dashed;animation-delay:160ms}.ds-del{color:var(--muted);opacity:0.7;text-decoration:line-through;text-decoration-thickness:1px;font-size:0.86em}@keyframes ds-ignite{0%{color:var(--ink);text-decoration-color:transparent}35%,100%{color:var(--alert)}}@media (prefers-reduced-motion:reduce){.ds-sub,.ds-ins{animation:none}}"
+    },
+    {
+      "name": "Byte Chips",
+      "kind": "chip",
+      "refersTo": "byte-chip",
+      "description": "Whisper's tokens for one sentence: text tokens bordered white, single bytes sunken grey hex.",
+      "html": "<ol class=\"ds-chips\"><li class=\"ds-tok\" lang=\"or\">ଆଜି</li><li class=\"ds-byte\">e0</li><li class=\"ds-byte\">ac</li><li class=\"ds-tok\">␣</li></ol>",
+      "css": ".ds-chips{display:flex;flex-wrap:wrap;gap:4px;list-style:none;padding:0;margin:0}.ds-tok{padding:0 6px;border-radius:5px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);font-family:'Noto Sans Oriya Variable','Noto Sans Oriya',sans-serif;font-size:0.8125rem;line-height:24px}.ds-byte{padding:0 4px;border-radius:5px;background:var(--sunken);color:var(--muted);font-family:'Monaspace Neon',ui-monospace,monospace;font-size:0.6875rem;line-height:24px;font-variant-numeric:tabular-nums}.ds-tok:hover,.ds-byte:hover{border-color:var(--brand);outline:1px solid var(--brand)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Test Set Is the Stage",
+    "overview": "IndicBridge is a lit-room projector piece: warm grey paper, white cards, 1px graphite lines and near-black ink, with one electric indigo carrying identity, the primary action and the orb. The hero is a full-height paper stage with a dot grid and two depth rings centred on a vanishing point at 46% of the height. Out of that point, real FLEURS test sentences in Devanagari, Kannada and Odia drift toward the viewer on white cards, and the MorphOrb sits at the centre turning speech into one more card. Everything below the hero is quiet editorial paper: one heavy slab headline per section, one figure, very little text.\n\nType is GitHub Next's Monaspace superfamily, self-hosted so the page renders with the network off. Xenon (slab), wide and heavy, is the display voice; Neon carries everything else; Radon, a handwriting face, takes one phrase per headline and the occasional margin note. Indic scripts fall through to bundled Noto faces at reading size. The world explicitly rejects the team's Neralu hackathon site: no deep-space starfield, no mint neon, no dark-by-default.\n\nColour only appears where it means something. Indigo is the product and the action; red is a wrong word or a failure the presenter must see; gold and blue identify the Hindi and English pivots in data and nowhere else.",
+    "keyCharacteristics": [
+      "Light paper by default (#f4f4f2), dark theme on request (#0a0a0c with a lighter indigo).",
+      "One accent, indigo, for identity, primary action and the orb.",
+      "Monaspace throughout: Xenon display, Neon text, Radon for one handwritten phrase.",
+      "1px lines and white cards; depth comes from the tunnel's real perspective, not from stacked shadows.",
+      "Every transcript carries the same three error marks, which ignite once when they land."
+    ],
+    "rules": [
+      {
+        "name": "The Colour Carries Meaning Rule",
+        "body": "Indigo is identity and action, red is a wrong word or a failure, gold and blue are the pivots in data. A colour that does not carry one of those meanings does not appear.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Accent Rule",
+        "body": "There is one accent. Glow tints live inside the orb; pivot colours live inside data. Neither leaks into chrome.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Hand Phrase Rule",
+        "body": "Each headline switches to Radon for exactly one phrase, and that phrase is the indigo in the heading. Radon never sets a full heading or a paragraph.",
+        "section": "typography"
+      },
+      {
+        "name": "The Script at Reading Size Rule",
+        "body": "Indic text is never smaller than 1.0625rem in a transcript and always sits in the bundled Noto faces, never a system fallback.",
+        "section": "typography"
+      },
+      {
+        "name": "The Perspective Not Shadow Rule",
+        "body": "The page earns depth from the tunnel's perspective and the two rings. Section cards stay flat; only floating things get the float shadow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Step Back Rule",
+        "body": "While the orb holds a result, the tunnel slows to 0.18 of its pace and dims to 0.28 opacity so the card reads.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** keep the page light by default on paper (#f4f4f2) and offer dark only through the toggle.",
+      "**Do** set every headline in Xenon 800 at 112% stretch and -0.04em, with exactly one phrase in indigo Radon.",
+      "**Do** use red only for a wrong word or a failure the presenter must see.",
+      "**Do** use gold and blue only to identify the Hindi and English pivots in data.",
+      "**Do** render Indic text in the bundled Noto faces at 1.0625rem or larger, with tabular figures for every compared number.",
+      "**Do** centre every hero layer on the vanishing point at 50% / 46%.",
+      "**Do** mark every transcript with the same three error marks and the key that explains them."
+    ],
+    "donts": [
+      "**Don't** use a deep-space starfield, mint neon, or a dark-by-default page; the world must not resemble the Neralu hackathon site.",
+      "**Don't** introduce a second accent or let the orb's glow tints into chrome.",
+      "**Don't** set full headings or paragraphs in Radon.",
+      "**Don't** put shadows on flat section cards; depth belongs to the tunnel.",
+      "**Don't** use system display faces; Monaspace is self-hosted so the page works offline.",
+      "**Don't** use emoji or \"AI-powered\" copy."
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+/*
+ * IndicBridge tokens. Light by default: the demo is projected in a lit room. [data-theme="dark"]
+ * on request.
+ *
+ * Colour carries meaning. Indigo is identity, the primary action and the orb. Alert red marks a
+ * wrong word (or a failure the presenter must see) and nothing else. The two pivot colours
+ * identify the Hindi and English pivots in data; they were validated with the dataviz palette
+ * checks against white and against the dark surface. --glow-* only tint the orb's atmosphere.
+ */
+:root {
+  color-scheme: light;
+
+  --paper: #f4f4f2;
+  --sunken: #ebebe8;
+  --surface: #ffffff;
+  --line: #e2e2de;
+  --line-strong: #c9c9c3;
+  --dot: #cdcdd3;
+
+  --ink: #111113;
+  --muted: #5c5c63;
+
+  --brand: #4f2cf5;
+  --brand-ink: #ffffff;
+  --brand-tint: #ecebfe;
+
+  --glow-a: #8f7dff;
+  --glow-b: #c3a6ff;
+  --glow-c: #6ec3ff;
+
+  --alert: #cf2a1d;
+  --alert-bg: #fdecea;
+
+  /* Series: Hindi pivot, English pivot (validated on #ffffff) */
+  --pivot-hi: #985a0e;
+  --pivot-en: #2a69ac;
+
+  --shadow-float: 0 22px 48px -28px rgba(17, 17, 19, 0.3), 0 1px 2px rgba(17, 17, 19, 0.05);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --paper: #0a0a0c;
+  --sunken: #111115;
+  --surface: #141418;
+  --line: #24242b;
+  --line-strong: #36363f;
+  --dot: #2a2a38;
+  --ink: #f1f1f3;
+  --muted: #9b9ba6;
+  --brand: #9d8cff;
+  --brand-ink: #0a0a0c;
+  --brand-tint: #1d1938;
+  --glow-a: #7b68ff;
+  --glow-b: #b18cff;
+  --glow-c: #4aa8ff;
+  --alert: #ff6257;
+  --alert-bg: #3a0f0b;
+  /* Series (validated on #141418) */
+  --pivot-hi: #b9861f;
+  --pivot-en: #4a8ee6;
+  --shadow-float: 0 26px 60px -28px rgba(0, 0, 0, 0.85);
+}

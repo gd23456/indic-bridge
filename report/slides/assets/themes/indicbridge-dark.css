@@ -1,0 +1,9 @@
+/* IndicBridge deck theme: dark (press T). Tokens only. */
+:root{
+  --bg:#0a0a0c; --bg-soft:#111115; --surface:#16161b; --surface-2:#1c1c22;
+  --border:#26262e; --border-strong:#383842; --dot:#24242f;
+  --text-1:#f1f1f3; --text-2:#b4b4be; --text-3:#8d8d98;
+  --accent:#9d8cff; --accent-ink:#0a0a0c; --accent-soft:#1d1938;
+  --hi:#c9972c; --en:#5a9aea; --bad:#ff6257; --bad-soft:#3a0f0b;
+  --shadow:0 24px 60px -30px rgba(0,0,0,.9); --shadow-lg:0 30px 70px -30px rgba(0,0,0,.95);
+}

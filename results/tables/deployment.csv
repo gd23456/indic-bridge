@@ -1,0 +1,9 @@
+run_id,language,precision,model_mb,clips,audio_s,rtf,WER,CER,WER_pytorch_same_clips,CER_pytorch_same_clips
+P-hindi,hindi,fp16,143.7,100,1205.3,0.032,41.12,15.53,41.74,15.85
+P-hindi,hindi,q4,42.2,100,1205.3,0.022,47.67,19.5,41.74,15.85
+H-marathi,marathi,fp16,143.7,100,1391.0,0.038,64.71,21.14,63.22,20.71
+H-marathi,marathi,q4,42.2,100,1391.0,0.025,70.83,23.97,63.22,20.71
+H-kannada,kannada,fp16,143.7,100,1357.4,0.058,66.86,16.96,64.35,16.17
+H-kannada,kannada,q4,42.2,100,1357.4,0.058,79.86,72.08,64.35,16.17
+H-odia,odia,fp16,143.7,100,1018.2,0.059,72.01,27.02,71.66,27.13
+H-odia,odia,q4,42.2,100,1018.2,0.044,78.45,31.84,71.66,27.13

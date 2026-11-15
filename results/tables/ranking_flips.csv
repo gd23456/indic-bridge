@@ -1,0 +1,9 @@
+language,test_set,raw_vs_clean_flip,whisper_vs_clean_flip,order_clean
+hindi,fleurs,False,False,Z-hindi
+hindi,kathbath,False,False,Z-hindi
+kannada,fleurs,False,False,H-kannada < D-kannada < E-kannada < Z-kannada
+kannada,kathbath,False,False,H-kannada < D-kannada < E-kannada < Z-kannada
+marathi,fleurs,False,False,H-marathi < E-marathi < D-marathi < Z-marathi
+marathi,kathbath,False,True,H-marathi < D-marathi < E-marathi < Z-marathi
+odia,fleurs,False,True,H-odia < E-odia < D-odia < Z-odia-bengali < Z-odia-assamese < Z-odia-hindi
+odia,kathbath,True,True,H-odia < D-odia < E-odia < Z-odia-assamese < Z-odia-bengali < Z-odia-hindi

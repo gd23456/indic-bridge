@@ -1,0 +1,114 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "./styles/fonts.css";
+@import "./styles/tokens.css";
+@import "./styles/orb.css";
+@import "./styles/marks.css";
+@import "./styles/tunnel.css";
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-sunken: var(--sunken);
+  --color-surface: var(--surface);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-brand: var(--brand);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-tint: var(--brand-tint);
+  --color-alert: var(--alert);
+  --color-alert-bg: var(--alert-bg);
+  --color-pivot-hi: var(--pivot-hi);
+  --color-pivot-en: var(--pivot-en);
+  --font-sans: "Monaspace Neon", "Noto Sans Devanagari Variable", "Noto Sans Kannada Variable", "Noto Sans Oriya Variable", ui-monospace, monospace;
+  --font-mono: "Monaspace Neon", "Noto Sans Devanagari Variable", "Noto Sans Oriya Variable", ui-monospace, monospace;
+  --font-display: "Monaspace Xenon", "Monaspace Neon", ui-monospace, monospace;
+  --font-hand: "Monaspace Radon", "Monaspace Neon", ui-monospace, monospace;
+}
+
+html,
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  caret-color: var(--brand);
+}
+
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]),
+summary,
+label:has(> input) {
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--brand);
+  color: var(--brand-ink);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+a {
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+button,
+a,
+label,
+input,
+select {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Display: Monaspace Xenon, heavy and wide. One phrase per headline may switch to Radon (.hand). */
+.display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 112%;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+.hand {
+  font-family: var(--font-hand);
+  font-weight: 500;
+  font-stretch: 100%;
+  letter-spacing: -0.03em;
+}
+.display .hand {
+  color: var(--brand);
+}
+
+/* Data: numbers align wherever they are compared (Monaspace is already fixed-width). */
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Transcripts: Indic scripts at reading size in the bundled Noto faces. */
+.script {
+  font-family: "Noto Sans Oriya Variable", "Noto Sans Devanagari Variable", "Noto Sans Kannada Variable", var(--font-sans);
+  line-height: 1.7;
+  /* Models hallucinate unbroken runs ("qaqaqa…", 200+ characters); they must wrap, not widen the page */
+  overflow-wrap: anywhere;
+}
+
+.press {
+  transition: transform 140ms var(--ease-out), background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+.press:active:not(:disabled) {
+  transform: scale(0.97);
+}

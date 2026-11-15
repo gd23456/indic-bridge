@@ -1,0 +1,242 @@
+/*
+ * IndicBridge viva deck. Built on the html-ppt runtime (assets/runtime.js, base.css,
+ * animations/animations.css, MIT, github.com/lewislulu/html-ppt-skill) and dressed in the
+ * IndicBridge demo's identity: GitHub Next's Monaspace (Xenon display, Radon accent phrase,
+ * Neon text), paper and one indigo, red only for wrong output, gold/blue for the two pivots.
+ * Everything is local, so the deck runs with Wi-Fi off. Canvas: 1920x1080, scaled by runtime.
+ */
+@font-face{font-family:"Monaspace Neon";src:url("fonts/monaspace-neon-var.woff2") format("woff2");font-weight:200 800;font-stretch:100% 125%;font-display:block}
+@font-face{font-family:"Monaspace Xenon";src:url("fonts/monaspace-xenon-var.woff2") format("woff2");font-weight:200 800;font-stretch:100% 125%;font-display:block}
+@font-face{font-family:"Monaspace Radon";src:url("fonts/monaspace-radon-var.woff2") format("woff2");font-weight:200 800;font-stretch:100% 125%;font-display:block}
+@font-face{font-family:"Noto Sans Devanagari";src:url("fonts/noto-sans-devanagari-devanagari-wght-normal.woff2") format("woff2");font-weight:100 900;unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+20B9,U+25CC,U+A830-A839,U+A8E0-A8FF}
+@font-face{font-family:"Noto Sans Kannada";src:url("fonts/noto-sans-kannada-kannada-wght-normal.woff2") format("woff2");font-weight:100 900;unicode-range:U+0C80-0CF3,U+1CD0,U+1CD2,U+1CDA,U+1CF2,U+1CF4,U+200C-200D,U+25CC}
+@font-face{font-family:"Noto Sans Oriya";src:url("fonts/noto-sans-oriya-oriya-wght-normal.woff2") format("woff2");font-weight:100 900;unicode-range:U+0B01-0B77,U+1CDA,U+1CF2,U+200C-200D,U+25CC}
+
+:root{
+  --font-sans:"Monaspace Neon","Noto Sans Devanagari","Noto Sans Kannada","Noto Sans Oriya",ui-monospace,monospace;
+  --font-mono:"Monaspace Neon",ui-monospace,monospace;
+  --font-display:"Monaspace Xenon","Monaspace Neon",ui-monospace,monospace;
+  --font-hand:"Monaspace Radon","Monaspace Neon",ui-monospace,monospace;
+  --font-script:"Noto Sans Devanagari","Noto Sans Kannada","Noto Sans Oriya","Monaspace Neon",sans-serif;
+  --radius:20px;
+  --ease-out:cubic-bezier(.23,1,.32,1);
+  --letter-normal:0;
+}
+
+body{font-family:var(--font-sans);color:var(--text-1);background:var(--bg)}
+::selection{background:var(--accent);color:var(--accent-ink)}
+
+/* ---------- stage ---------- */
+.deck::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(var(--dot) 1.4px,transparent 1.4px);background-size:36px 36px;
+  -webkit-mask-image:radial-gradient(ellipse 80% 75% at 50% 50%,#000 40%,transparent 100%);
+  mask-image:radial-gradient(ellipse 80% 75% at 50% 50%,#000 40%,transparent 100%);opacity:.75}
+.slide{padding:150px 128px 120px;justify-content:center;font-size:26px;line-height:1.5}
+.slide > *{position:relative;z-index:1}
+
+/* top-left wordmark and top-right speaker, on every slide */
+.brand{position:absolute!important;top:54px;left:128px;display:flex;align-items:center;gap:14px;
+  font-family:var(--font-display);font-weight:800;font-stretch:112%;font-size:24px;letter-spacing:-.03em}
+.brand svg{width:40px;height:40px;color:var(--accent)}
+.who{position:absolute!important;top:52px;right:128px;display:flex;align-items:center;gap:14px;
+  padding:10px 20px 10px 14px;border:1px solid var(--border);border-radius:999px;background:var(--surface);
+  font-size:20px;box-shadow:var(--shadow)}
+.who .face{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+  background:var(--accent);color:var(--accent-ink);font-family:var(--font-display);font-weight:800;font-size:16px}
+.who b{font-weight:700}
+.who span{color:var(--text-3)}
+
+/* global footer: one slide-number for the runtime */
+.deck > .deck-footer{z-index:5;bottom:40px;left:128px;right:128px;font-size:18px;color:var(--text-3);letter-spacing:0}
+.deck > .deck-footer .slide-number{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+
+/* ---------- type ---------- */
+.h1{font-family:var(--font-display);font-weight:800;font-stretch:112%;font-size:132px;line-height:.95;
+  letter-spacing:-.045em;margin:0 0 30px;text-wrap:balance}
+.h2{font-family:var(--font-display);font-weight:800;font-stretch:108%;font-size:66px;line-height:1.02;
+  letter-spacing:-.04em;margin:0 0 44px;max-width:1560px;text-wrap:balance}
+.hand{font-family:var(--font-hand);font-weight:500;font-stretch:100%;letter-spacing:-.03em;color:var(--accent)}
+.h1 .hand,.h2 .hand{display:inline}
+.lede{font-size:30px;line-height:1.5;color:var(--text-2);font-weight:400;max-width:58ch}
+.muted{color:var(--text-3)}
+.note{font-family:var(--font-hand);color:var(--text-3);font-size:24px}
+.script{font-family:var(--font-script);line-height:1.6}
+.num{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.big{font-family:var(--font-display);font-weight:800;font-stretch:110%;letter-spacing:-.04em;line-height:1}
+.accent{color:var(--accent)}
+.bad{color:var(--bad)}
+.hi{color:var(--hi)}
+.en{color:var(--en)}
+b,strong{font-weight:700}
+
+/* ---------- containers ---------- */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:32px 36px;box-shadow:var(--shadow);overflow:visible}
+.card h4{font-family:var(--font-display);font-weight:800;font-stretch:106%;font-size:30px;letter-spacing:-.03em;margin:0 0 12px}
+.card p{margin:0;color:var(--text-2);font-size:24px;line-height:1.5}
+.tag{display:inline-flex;align-items:center;gap:10px;font-size:18px;color:var(--text-3);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
+.tag i{width:10px;height:10px;border-radius:50%;background:var(--text-3);display:inline-block}
+.tag.hi i{background:var(--hi)}.tag.en i{background:var(--en)}.tag.acc i{background:var(--accent)}.tag.bad i{background:var(--bad)}
+.grid{display:grid;gap:28px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.split{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:start}
+.row{display:flex;gap:28px;align-items:center}
+.mt-s{margin-top:16px}.mt-m{margin-top:28px}.mt-l{margin-top:44px}
+
+/* ---------- facts strip ---------- */
+.facts{display:flex;gap:56px;flex-wrap:wrap;align-items:flex-end;border-top:1px solid var(--border);padding-top:28px}
+.fact .big{font-size:68px}
+.fact .lbl{font-size:22px;color:var(--text-2);margin-top:8px;max-width:22ch;line-height:1.35}
+
+/* ---------- title slide ---------- */
+.title-stage{position:absolute!important;inset:0;z-index:0!important;perspective:1400px;pointer-events:none}
+.title-stage .ring{position:absolute;left:50%;top:50%;border-radius:50%;transform:translate(-50%,-50%)}
+.title-stage .ring.r1{width:700px;height:700px;border:1.5px solid color-mix(in srgb,var(--accent) 25%,transparent)}
+.title-stage .ring.r2{width:1120px;height:1120px;border:1.5px dashed var(--border-strong);opacity:.7}
+.title-stage .sent-wrap{position:absolute;width:300px}
+.title-stage .sent{padding:22px 24px;border-radius:18px;background:var(--surface);
+  border:1px solid var(--border);box-shadow:var(--shadow);font-size:24px;opacity:.85}
+.title-stage .sent small{display:flex;justify-content:space-between;font-family:var(--font-sans);font-size:15px;
+  color:var(--text-3);text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px}
+.title-stage .veil{position:absolute;left:50%;top:50%;width:1500px;height:760px;transform:translate(-50%,-50%);
+  background:radial-gradient(closest-side,var(--bg) 60%,transparent 100%)}
+.title-main{text-align:center;align-self:center;margin-top:-20px}
+.team{display:flex;justify-content:center;gap:48px;margin-top:56px;font-size:22px}
+.team div{display:flex;flex-direction:column;align-items:center;gap:4px}
+.team b{font-size:24px}
+.team span{color:var(--text-3);font-family:var(--font-mono);font-size:18px}
+
+/* ---------- transcript comparison ---------- */
+.lines{display:flex;flex-direction:column;gap:22px}
+.line{display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:baseline;padding:24px 30px;border-radius:18px;
+  background:var(--surface);border:1px solid var(--border)}
+.line .k{font-size:20px;color:var(--text-3);text-transform:uppercase;letter-spacing:.1em}
+.line .v{font-size:34px;line-height:1.5}
+.line.wrong .v{color:var(--bad);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--bad) 55%,transparent);text-underline-offset:8px;text-decoration-thickness:2px}
+.line.good{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+
+/* ---------- pipeline diagram ---------- */
+.pipe{width:100%;height:auto;overflow:visible}
+.pipe text{font-family:var(--font-sans);fill:var(--text-1)}
+.pipe .lbl{font-size:26px;font-weight:700}
+.pipe .sub{font-size:20px;fill:var(--text-3)}
+.pipe .box{fill:var(--surface);stroke:var(--border-strong);stroke-width:2}
+.pipe .box.acc{stroke:var(--accent);stroke-width:3}
+.pipe .box.hi{stroke:var(--hi);stroke-width:3}
+.pipe .box.en{stroke:var(--en);stroke-width:3}
+.pipe .wire{fill:none;stroke:var(--text-3);stroke-width:2.5;stroke-dasharray:1200;stroke-dashoffset:1200}
+.slide.is-active .pipe .wire{animation:draw 1.1s var(--ease-out) forwards;animation-delay:calc(var(--d,0) * 1ms)}
+.pipe .node{opacity:0}
+.slide.is-active .pipe .node{animation:pop .6s var(--ease-out) forwards;animation-delay:calc(var(--d,0) * 1ms)}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* ---------- targets table ---------- */
+.targets{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.target{padding:34px 34px 30px;border-radius:22px;background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow)}
+.target .glyph{font-family:var(--font-script);font-size:96px;line-height:1.2;margin-bottom:10px}
+.target h4{font-family:var(--font-display);font-weight:800;font-size:36px;letter-spacing:-.03em;margin:0 0 18px}
+.target dl{display:grid;grid-template-columns:auto 1fr;gap:10px 18px;margin:0;font-size:22px}
+.target dt{color:var(--text-3)}
+.target dd{margin:0}
+.yes{color:var(--accent);font-weight:700}
+
+/* ---------- byte chips ---------- */
+.bytes{display:flex;flex-wrap:wrap;gap:6px;max-width:1660px}
+.bytes span{font-family:var(--font-mono);font-size:17px;line-height:1;padding:9px 8px;border-radius:7px;
+  background:var(--surface-2);color:var(--text-3);border:1px solid var(--border);opacity:0}
+.bytes span.sp{background:var(--surface);color:var(--accent);border-color:var(--accent);font-weight:700}
+.slide.is-active .bytes span{animation:chip .35s var(--ease-out) forwards;animation-delay:calc(var(--i) * 9ms + 300ms)}
+@keyframes chip{from{opacity:0;transform:translateY(10px) scale(.8)}to{opacity:1;transform:none}}
+.odia-line{font-family:var(--font-script);font-size:58px;line-height:1.4;margin:0 0 30px}
+
+/* ---------- normalizer demo ---------- */
+.norm{display:grid;grid-template-columns:270px 1fr;gap:22px 30px;align-items:baseline;font-size:26px}
+.norm .k{color:var(--text-3);font-size:20px;text-transform:uppercase;letter-spacing:.1em}
+.norm .v{font-family:var(--font-script);font-size:52px;line-height:1.3}
+.eq{font-family:var(--font-mono);font-size:28px;line-height:1.9}
+.eq .var{color:var(--accent);font-weight:700}
+
+/* ---------- problem cards ---------- */
+.fix{display:grid;grid-template-rows:auto auto auto;gap:14px}
+.fix .q{font-family:var(--font-display);font-weight:800;font-size:28px;letter-spacing:-.03em}
+.fix .why{color:var(--text-2);font-size:21px;line-height:1.45}
+.fix .how{font-size:21px;line-height:1.45;border-top:1px dashed var(--border-strong);padding-top:14px}
+.fix .how::before{content:"fix → ";font-family:var(--font-hand);color:var(--accent);font-weight:600}
+
+/* ---------- results table ---------- */
+.tbl{width:100%;border-collapse:collapse;font-size:27px}
+.tbl th{font-weight:400;color:var(--text-3);font-size:19px;text-transform:uppercase;letter-spacing:.1em;text-align:right;padding:0 18px 14px}
+.tbl th:first-child,.tbl td:first-child{text-align:left}
+.tbl td{padding:13px 18px;border-top:1px solid var(--border);text-align:right;font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.tbl td:first-child{font-family:var(--font-sans)}
+.tbl tr.grp td{border-top:2px solid var(--border-strong)}
+.tbl .z{color:var(--text-3)}
+.tbl .best{color:var(--accent);font-weight:800}
+.tbl .lang{font-family:var(--font-display);font-weight:800;letter-spacing:-.02em}
+.sw{display:inline-block;width:14px;height:14px;border-radius:50%;margin-right:12px;vertical-align:1px;background:var(--text-3)}
+.sw.hi{background:var(--hi)}.sw.en{background:var(--en)}.sw.z{background:transparent;border:2px solid var(--text-3)}
+
+/* ---------- gain chart ---------- */
+.chart{width:100%;height:auto;overflow:visible}
+.chart text{font-family:var(--font-sans);fill:var(--text-2)}
+.chart .ttl{font-family:var(--font-display);font-weight:800;font-size:30px;fill:var(--text-1)}
+.chart .tick{font-size:19px;fill:var(--text-3)}
+.chart .rl{font-size:26px;font-weight:700;fill:var(--text-1)}
+.chart .gl{stroke:var(--border);stroke-width:1.5}
+.chart .zero{stroke:var(--text-2);stroke-width:2.5}
+.chart .ci{stroke-width:7;stroke-linecap:round;stroke-dasharray:600;stroke-dashoffset:600}
+.chart .ci.hi{stroke:var(--hi)}.chart .ci.en{stroke:var(--en)}
+.chart .dot{stroke:var(--surface);stroke-width:4;opacity:0;transform-box:fill-box;transform-origin:center}
+.chart .dot.hi{fill:var(--hi)}.chart .dot.en{fill:var(--en)}
+.chart .val{font-size:21px;font-weight:700;opacity:0}
+.chart .val.hi{fill:var(--hi)}.chart .val.en{fill:var(--en)}
+.slide.is-active .chart .ci{animation:draw 1s var(--ease-out) forwards;animation-delay:calc(var(--d) * 1ms)}
+.slide.is-active .chart .dot{animation:dotpop .5s cubic-bezier(.22,1.3,.36,1) forwards;animation-delay:calc(var(--d) * 1ms + 500ms)}
+.slide.is-active .chart .val{animation:fadein .4s ease forwards;animation-delay:calc(var(--d) * 1ms + 800ms)}
+@keyframes dotpop{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:scale(1)}}
+@keyframes fadein{to{opacity:1}}
+.legend{display:flex;gap:36px;font-size:22px;color:var(--text-2)}
+
+/* ---------- bars (Hindi-specific gain) ---------- */
+.bars{display:flex;flex-direction:column;gap:22px}
+.bar{display:grid;grid-template-columns:150px 1fr 120px;gap:20px;align-items:center;font-size:24px}
+.bar .track{position:relative;height:44px;background:var(--surface-2);border-radius:10px;overflow:hidden;border:1px solid var(--border)}
+.bar .fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--accent);border-radius:10px}
+.bar .fill.k{background:color-mix(in srgb,var(--accent) 45%,var(--surface))}
+.slide.is-active .bar .fill{animation:grow 1s var(--ease-out) forwards;animation-delay:calc(var(--d) * 1ms)}
+@keyframes grow{to{width:var(--w)}}
+.bar .v{font-family:var(--font-mono);font-weight:700;text-align:right}
+
+/* ---------- link button ---------- */
+.btn{display:inline-flex;align-items:center;gap:14px;padding:18px 30px;border-radius:999px;background:var(--accent);
+  color:var(--accent-ink)!important;font-size:24px;font-weight:700;text-decoration:none!important;box-shadow:var(--shadow)}
+.btn:hover{filter:brightness(1.08)}
+
+/* ---------- takeaways ---------- */
+.take{display:grid;grid-template-columns:90px 1fr;gap:26px;align-items:start;padding:28px 0;border-top:1px solid var(--border)}
+.take .n{font-family:var(--font-display);font-weight:800;font-size:64px;line-height:.9;color:var(--accent)}
+.take h4{font-family:var(--font-display);font-weight:800;font-size:38px;letter-spacing:-.03em;margin:0 0 8px}
+.take p{margin:0;color:var(--text-2);font-size:24px}
+
+@media (prefers-reduced-motion:reduce){
+  .slide.is-active .pipe .wire,.slide.is-active .chart .ci{animation:none;stroke-dashoffset:0}
+  .slide.is-active .pipe .node,.slide.is-active .chart .dot,.slide.is-active .chart .val,.slide.is-active .bytes span{animation:none;opacity:1}
+  .slide.is-active .bar .fill{animation:none;width:var(--w)}
+  [data-anim]{animation:none!important;opacity:1!important}
+}
+
+/* fixes after the first capture round */
+.h1 .comma{margin-left:-.14em}
+.card p + p{margin-top:12px}
+.card p.mt-s{margin-top:14px}
+.card p.mt-m,.card .mt-m{margin-top:24px}
+.tag.raw{text-transform:none;letter-spacing:.04em}
+.tbl{font-size:25px}
+.tbl td{padding:10px 18px}
+.bars{gap:12px}
+.bar{font-size:22px}
+.bar .track{height:30px}
+.bar .fill{border-radius:8px}
